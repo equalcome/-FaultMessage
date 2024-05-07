@@ -1,0 +1,112 @@
+body {
+  background-color: rgb(161, 236, 227);
+  display: flex;
+  flex-direction: column; /* 让主轴为垂直方向 */
+  justify-content: space-between; /* 在主轴（垂直）方向居中 */
+  align-items: flex-start; /* 在交叉轴（水平）方向居中 */
+  height: 100vh; /* 使用视口高度，使得有足够的空间在垂直方向上居中 */
+  margin: 10px; /* 移除默认的 margin */
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column; /* 子元素垂直排列 */
+  justify-content: center; /* 在主轴方向上居中对齐 */
+  align-items: center; /* 在交叉轴方向上居中对齐 */
+  position: absolute; /* 绝对定位 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 居中定位的常用技巧 */
+
+  width: auto; /* 宽度根据内容自动调整 */
+  padding: 20px; /* 根据需要调整 */
+}
+
+.text-block {
+  text-align: center; /* 文字居中 */
+  margin: 50px 0px; /* 添加一些垂直间距 */
+}
+
+#result {
+  padding: 20px; /* 增加一些垂直間距 */
+  border: 8px solid #000000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(177, 13, 13, 0.1);
+  font-size: 2rem;
+}
+
+/* 按鈕 */
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 120px; /* 增加高度以適應大字體 */
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding: 10px 16px; /* 增加垂直填充 */
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 100px; /* 字體大小保持為 100px */
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+select {
+  font-size: 2rem;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+input[type="time"],
+input[type="date"] {
+  font-size: 2rem;
+}
+
+.form-row label {
+  margin-right: 10px;
+  font-size: 2rem;
+}
+
+option {
+  font-size: 2rem;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>故障訊息產生器</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="form-row">
+      <label for="reportNumber">回報股別:</label>
+      <select id="report" name="report">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="reportNumber">第幾報:</label>
+      <select id="reportNumber" name="reportNumber">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="Conclusion">續報/完報：</label>
+      <select id="Conclusion" name="Conclusion">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="notificationDate">通報日期：</label>
+      <input type="date" id="notificationDate" name="notificationDate" />
+    </div>
+
+    <div class="form-row">
+      <label for="notificationTime">通報時間：</label>
+      <input type="time" id="notificationTime" name="notificationTime" />
+    </div>
+
+    <div class="form-row">
+      <label for="notifyingUnit">通知單位：</label>
+      <select id="notifyingUnit" name="notifyingUnit">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="incidentLocation">事故地點：</label>
+      <select id="incidentLocation" name="incidentLocation">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="upDown">上．下行：</label>
+      <select id="upDown" name="upDown">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="incidentDescription">事故簡述：</label>
+      <select id="incidentDescription" name="incidentDescription">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="powerSupplyImpact">供電影響：</label>
+      <select id="powerSupplyImpact" name="powerSupplyImpact">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="operationalImpact">營運影響：</label>
+      <select id="operationalImpact" name="operationalImpact">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="personnelDispatched">出勤人數：</label>
+      <select id="personnelDispatched" name="personnelDispatched">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="personnelSelected">人員點選：</label>
+      <select id="personnelSelected" name="personnelSelected">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="attendanceList">出勤清單：</label>
+      <select id="attendanceList" name="attendanceList">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="departureLocation">出發地點：</label>
+      <select id="departureLocation" name="departureLocation">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="departureTime">出發時間：</label>
+      <input type="time" id="departureTime" name="departureTime" />
+    </div>
+
+    <div class="form-row">
+      <label for="arrivalTime">抵達時間：</label>
+      <input type="time" id="arrivalTime" name="arrivalTime" />
+    </div>
+
+    <div class="centered-container">
+      <div id="result" class="text-block">哈哈哈哈哈哈</div>
+      <button id="button" class="button-29" role="button">點我複製文字</button>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

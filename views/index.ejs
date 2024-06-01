@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>故障訊息產生器</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div class="form-row">
-      <label for="reportNumber">回報股別:</label>
+      <label for="report">回報股別:</label>
       <select id="report" name="report">
-        <option value="option1">選項1</option>
-        <option value="option2">選項2</option>
-        <option value="option3">選項3</option>
+        <% options.forEach(function(option) { %>
+        <option value="<%= option.id %>"><%= option.description %></option>
+        <% }); %>
       </select>
     </div>
 
@@ -149,6 +149,6 @@
       <button id="button" class="button-29" role="button">點我複製文字</button>
     </div>
 
-    <script src="./app.js"></script>
+    <script src="/app.js"></script>
   </body>
 </html>

@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // 收集並顯示目前表單選項
   gatherSelections();
 
-  // 為所有<select>和<input>元素新增事件監聽器，以便在選項變更時更新顯示的結果
+  // 為所有<select>、<input>和<textarea>元素新增事件監聽器，以便在選項變更時更新顯示的結果
   document
-    .querySelectorAll("select, input[type='time'], input[type='date']")
+    .querySelectorAll(
+      "select, input[type='time'], input[type='date'], input[type='text'], textarea"
+    )
     .forEach((element) => {
       element.addEventListener("change", gatherSelections);
     });
@@ -31,27 +33,27 @@ document.addEventListener("DOMContentLoaded", () => {
     tempInput.select();
     document.execCommand("copy");
     document.body.removeChild(tempInput);
-    alert("您的故障訊息為: " + textToCopy);
+    alert("您的故障訊息已複製: " + textToCopy);
   });
 });
 
 function gatherSelections() {
-  let selectionsText = []; //初始化一個數組
+  let reportSelect = document.getElementById("report");
+  let reportText = reportSelect.options[reportSelect.selectedIndex].text;
 
-  // 收集 <select> 元素的選中選項文本
-  document.querySelectorAll("select").forEach((select) => {
-    let optionText = select.options[select.selectedIndex].text;
-    selectionsText.push(optionText);
-  });
+  let reportNumber = document.getElementById("reportNumber").value;
+  let notificationTime = document.getElementById("notificationTime").value;
+  let incidentDescription = document.getElementById(
+    "incidentDescription"
+  ).value;
 
-  // 收集 <input> 元素（時間和日期）的值
-  document
-    .querySelectorAll('input[type="time"], input[type="date"]')
-    .forEach((input) => {
-      let inputValue = input.value;
-      selectionsText.push(inputValue ? inputValue : "未指定");
-    });
+  // 格式化时间为 24 小时制的 hh:mm
+  let [hours, minutes] = notificationTime.split(":");
+  let formattedTime = `${hours}:${minutes}`;
 
-  // 将收集到的数据显示到结果区域
-  document.getElementById("result").innerText = selectionsText.join("\n");
+  // 按指定格式生成结果文本
+  let resultText = `${reportText}-第${reportNumber}報：\n事件：${formattedTime} ${incidentDescription}`;
+
+  // 将结果文本显示在结果区域
+  document.getElementById("result").innerText = resultText;
 }

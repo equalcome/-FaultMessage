@@ -8,6 +8,22 @@ body {
   margin: 10px; /* 移除默认的 margin */
 }
 
+.section {
+  margin-bottom: 20px; /* 在部分之间添加间距 */
+  background-color: #e0f7fa; /* 设置背景颜色以区分部分 */
+  padding: 10px; /* 添加内边距 */
+  border-radius: 8px; /* 圆角 */
+}
+
+/* .section-title {
+  font-size: 2.5rem; /* 放大字體 */
+/*} */
+
+hr {
+  border: 1px solid #006064; /* 分隔线颜色 */
+  margin: 20px 0; /* 分隔线的上下间距 */
+}
+
 .centered-container {
   display: flex;
   flex-direction: column; /* 子元素垂直排列 */
@@ -87,14 +103,23 @@ body {
   transform: translateY(2px);
 }
 
-select {
+select,
+input[type="text"],
+textarea {
   font-size: 2rem;
+  min-width: 200px; /* 設置最小寬度 */
+}
+
+textarea {
+  resize: vertical; /* 允許垂直調整大小 */
+  flex: 2;
 }
 
 .form-row {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 input[type="time"],
@@ -105,6 +130,7 @@ input[type="date"] {
 .form-row label {
   margin-right: 10px;
   font-size: 2rem;
+  white-space: nowrap;
 }
 
 option {

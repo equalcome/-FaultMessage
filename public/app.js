@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "select, input[type='time'], input[type='date'], input[type='text'], textarea"
     )
     .forEach((element) => {
-      element.addEventListener("change", gatherSelections);
+      element.addEventListener("change", updateDetails);
     });
 
   // 綁定複製按鈕的點擊事件
@@ -47,13 +47,30 @@ function gatherSelections() {
     "incidentDescription"
   ).value;
 
-  // 格式化时间为 24 小时制的 hh:mm
+  // 12小時制變成24小時制
   let [hours, minutes] = notificationTime.split(":");
   let formattedTime = `${hours}:${minutes}`;
 
-  // 按指定格式生成结果文本
-  let resultText = `${reportText}-第${reportNumber}報：\n事件：${formattedTime} ${incidentDescription}`;
+  // 更新影響範圍詳細信息
+  const delay = document.getElementById("delay").value;
+  const influenceInterval = document.getElementById("influenceInterval").value;
+  const simpleDescription = document.getElementById("simpleDescription").value;
 
-  // 将结果文本显示在结果区域
-  document.getElementById("result").innerText = resultText;
+  //XX股-第X報：
+  const titleText = `${reportText}-第${reportNumber}報：\n`;
+
+  // (1)事件：
+  let resultText = `(1)事件：${formattedTime} ${incidentDescription}\n`;
+
+  //(2)影響範圍：⚫
+  const impactDetails = `
+    (2)影響範圍：\n延誤否：${delay}\n影響區間：${influenceInterval}\n簡易敘述：${simpleDescription}`;
+
+  // 將结果文本和影響範圍詳細信息顯示在結果區域
+  document.getElementById("result").innerText =
+    titleText + resultText + impactDetails;
+}
+
+function updateDetails() {
+  gatherSelections();
 }
